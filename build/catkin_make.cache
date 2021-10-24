@@ -1,0 +1,2 @@
+px4mocap
+-DCATKIN_DEVEL_PREFIX=/home/amov/px4mocap_ws/devel -DCMAKE_INSTALL_PREFIX=/home/amov/px4mocap_ws/install -G Unix Makefiles

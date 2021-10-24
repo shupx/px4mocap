@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/amov/px4mocap_ws/install/setup.sh

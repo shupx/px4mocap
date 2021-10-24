@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include "geometry_msgs/TransformStamped.h"
+//#include "geometry_msgs/TransformStamped.h"
 #include <geometry_msgs/PoseStamped.h>
 
 using namespace std;
@@ -13,17 +13,17 @@ ros::Publisher vision_pub;
 
 void uwb_to_fcu();
 
-void cb_uwb(const geometry_msgs::TransformStamped::ConstPtr& msg)
+void cb_uwb(const geometry_msgs::PoseStamped::ConstPtr& msg)
 {
-	geometry_msgs::TransformStamped uwb_data;
+	geometry_msgs::PoseStamped uwb_data;
 	uwb_data = *msg;
-	pos_uwb[0] =  uwb_data.transform.translation.x;
-	pos_uwb[1] =  uwb_data.transform.translation.y;
-	pos_uwb[2] =  uwb_data.transform.translation.z;
-	q_uwb[0] = uwb_data.transform.rotation.x;
-	q_uwb[1] = uwb_data.transform.rotation.y;
-	q_uwb[2] = uwb_data.transform.rotation.z;
-	q_uwb[3] = uwb_data.transform.rotation.w;
+	pos_uwb[0] =  uwb_data.pose.position.x/1000;//mm to m
+	pos_uwb[1] =  uwb_data.pose.position.y/1000;
+	pos_uwb[2] =  uwb_data.pose.position.z/1000;
+	q_uwb[0] = uwb_data.pose.orientation.x;
+	q_uwb[1] = uwb_data.pose.orientation.y;
+	q_uwb[2] = uwb_data.pose.orientation.z;
+	q_uwb[3] = uwb_data.pose.orientation.w;
 }
 
 
@@ -61,7 +61,12 @@ int main(int argc,char **argv)
 	while(ros::ok())
 	{
 		ros::spinOnce();
-		uwb_to_fcu();
+		if( (pos_uwb[0]==0)&&(pos_uwb[1]==0) ) {}
+		else if( (pos_uwb[0]>900)&&(pos_uwb[1]>900) ) {}
+		else
+		{
+			uwb_to_fcu();
+		}
 		loop_rate.sleep();
 	}  //无法在回调函数里发布话题，报错函数里没有定义vel_pub!只能在main里面发布了
 

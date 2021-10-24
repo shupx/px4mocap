@@ -7,6 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/amov/px4mocap_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH='/home/amov/amovlab_ws/devel/lib:/home/amov/rplidar_ws/devel/lib:/home/amov/Prometheus/devel/lib:/home/amov/realsense_ws/devel/lib:/opt/ros/melodic/lib'
+export PKG_CONFIG_PATH='/home/amov/rplidar_ws/devel/lib/pkgconfig:/home/amov/Prometheus/devel/lib/pkgconfig:/home/amov/realsense_ws/devel/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig'
 export PWD='/home/amov/px4mocap_ws/build'
-export ROS_PACKAGE_PATH="/home/amov/px4mocap_ws/src:$ROS_PACKAGE_PATH"

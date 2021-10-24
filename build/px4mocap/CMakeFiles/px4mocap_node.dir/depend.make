@@ -6,9 +6,6 @@ px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/inclu
 px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/geometry_msgs/Pose.h
 px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/geometry_msgs/PoseStamped.h
 px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/geometry_msgs/Quaternion.h
-px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/geometry_msgs/Transform.h
-px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/geometry_msgs/TransformStamped.h
-px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/geometry_msgs/Vector3.h
 px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/ros/advertise_options.h
 px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/ros/advertise_service_options.h
 px4mocap/CMakeFiles/px4mocap_node.dir/src/px4mocap.cpp.o: /opt/ros/melodic/include/ros/assert.h

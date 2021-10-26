@@ -44,7 +44,7 @@ rostopic echo /mavros/local_position/pose
 
 Be sure to properly set AID_MASK and HGT parameters of PX4 on QgroundControl to reveive these pose messages.
 
-Be sure to align body x axis to the heading of the drone when creating rigid body in Seeker(mocap software). Otherwise, the yaw angle calculated by mocap system will not be the angle from world x to the heading of the drone(PX4 use ENU world frame and FlU body frame).
+Be sure to align body x axis to the heading of the drone when creating rigid body in Seeker(mocap software). Otherwise, the yaw angle calculated by mocap system will not be the angle from world x to the heading of the drone(Mavros use ENU world frame and FlU body frame).
 
 Please feel free to ask questions in Issue
 

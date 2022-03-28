@@ -2,6 +2,9 @@
 
 This ros package is used to read mocap pose from vrpn and send the pose data to px4 flight controller through mavros at a frequency of 50Hz.
 
+### Note!!!
+This package is for motion capture vrpn system with distance unit 'mm', for systems with distance unit 'm', you should change the code by yourself!!
+
 
 ### Build:
 

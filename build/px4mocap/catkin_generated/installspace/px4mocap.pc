@@ -1,8 +1,0 @@
-prefix=/home/amov/px4mocap_ws/install
-
-Name: px4mocap
-Description: Description of px4mocap
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: 

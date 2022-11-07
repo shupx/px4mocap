@@ -1,0 +1,38 @@
+sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list'
+
+
+sudo apt install curl
+
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+
+wget http://packages.ros.org/ros.key
+
+sudo apt-key add ros.key
+
+sudo apt-get update --fix-missing
+
+sudo apt install ros-noetic-ros-base
+sudo apt install ros-noetic-desktop
+
+source /opt/ros/noetic/setup.bash
+
+
+
+sudo apt install ros-noetic-mavros ros-noetic-mavros-extras -y
+
+wget xxxxxxxxxxxxxxxxx.sh
+
+sudo chmod +x install_geographiclib_datasets.sh
+
+sudo ./install_geographiclib_datasets.sh
+
+
+
+
+git clone https://gitee.com/shu-peixuan/px4mocap.git
+
+source /home/orangepi/px4mocap/devel/setup.bash
+
+sudo apt install ros-noetic-vrpn-client-ros -y
+

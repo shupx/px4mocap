@@ -9,7 +9,7 @@ using namespace std;
 float pos_uwb[3]={0,0,0};
 float q_uwb[4]={0,0,0,0};
 
-string mocap_unit="m";
+string mocap_unit;
 
 ros::Publisher vision_pub;
 
@@ -67,8 +67,9 @@ int main(int argc,char **argv)
 	ros::init(argc,argv,"px4mocap0");
 	ros::NodeHandle n("");
 	ros::NodeHandle nh("~");
-	
-	n.param<string>("mocap_unit", mocap_unit, "m");
+		
+	nh.param<string>("mocap_unit", mocap_unit, "m");
+	ROS_INFO("[px4mocap] mocap_unit: %s",mocap_unit.c_str());
 	
 	ros::Subscriber uwb_sub = n.subscribe("rigidpose_topic",10,cb_uwb);
 	vision_pub = n.advertise<geometry_msgs::PoseStamped>("mavros/vision_pose/pose", 10);

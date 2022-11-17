@@ -19,10 +19,22 @@ source devel/setup.bash
 ```
 
 
-Please install or update vrpn client to the newest version like: 
+Please install or update vrpn client to the newest version like (`melodic` for ubuntu18 and `noetic` for ubuntu20):
 
 ```C
 sudo apt install ros-melodic-vrpn-client-ros
+```
+
+If you have not installed mavros, then you can follow the command in `./ROS-install-command` to install mavros first (`melodic` for ubuntu18 and `noetic` for ubuntu20):
+
+```bash
+sudo apt install ros-melodic-mavros ros-melodic-mavros-extras -y
+
+cd ROS-install-command
+
+sudo chmod +x install_geographiclib_datasets.sh
+
+sudo ./install_geographiclib_datasets.sh
 ```
 
 ### Launch:

@@ -1,0 +1,10 @@
+[Unit]
+Description=mocap2px4.shdaemon
+
+[Service]
+ExecStart=/home/cm/px4mocap/src/px4mocap/launch/mocap2px4.sh
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

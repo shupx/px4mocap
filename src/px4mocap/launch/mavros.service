@@ -1,0 +1,10 @@
+[Unit]
+Description=mavros.shdaemon
+
+[Service]
+ExecStart=/home/cm/px4mocap/src/px4mocap/launch/mavros.sh
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

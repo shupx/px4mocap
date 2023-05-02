@@ -83,7 +83,7 @@ Note that `rostopic echo` is cpu and RAM consuming. Do not keep `rostopic echo` 
 ### Attention:
 
 
-Be sure to properly set AID_MASK and HGT parameters of PX4 on QgroundControl to receive these pose messages.
+Be sure to properly set `EKF2_AID_MASK` (`EKF2_EV_CTRL` in px4 v1.14.0 and newer version) and `EKF2_HGT_REF` parameters of PX4 on QgroundControl to receive these pose messages.
 
 Be sure to align body x axis to the heading of the drone when creating rigid body in Seeker(mocap software). Otherwise, the yaw angle calculated by mocap system will not be the angle from world x to the heading of the drone(Mavros use ENU world frame and FLU body frame).
 

@@ -39,7 +39,7 @@ sudo ./install_geographiclib_datasets.sh
 
 ### Launch:
 
-To launch the px4mocap, please connect to the same WIFI with mocap server. Change the  _fcu_url_ (onboard computer port),  _server IP_  and desired  _rigidpose_topic_  in mocap2px4.launch. Then 
+To launch the px4mocap, please connect to the same WIFI with mocap server. Change the  `fcu_url` (onboard computer port), `gcs_url` (QGroundControl IP),  `server` IP (motion capture system vrpn IP)  and desired  `rigidpose_topic` (vrpn rigid body pose topic)  in `mocap2px4.launch`. Then 
 
 ```C
 roslaunch px4mocap mocap2px4.launch
@@ -50,8 +50,27 @@ Or you can use the shell script to launch quickly:
 
 ```bash
 cd src/px4mocap/launch
+# change the `source` path in mocap2px4.sh first
 ./mocap2px4.sh
 ```
+
+Similarly, you can launch `mavros.launch`/`mavros.sh` and `vrpn2mavros.launch`/`vrpn2mavros.sh` separately in your need. 
+
+Furthur more, you can set `mavros` or `vrpn2mavros` as auto-startup service on boot by using `systemctl`. Set `mavros.service` as an example:
+
+```bash
+# change `ExecStart` path in mavros.service first (must use absolute path), then:
+sudo cp mavros.service /etc/systemd/system/mavros.service
+sudo systemctl enable mavros.service # enable service on boot
+# other operations:
+sudo systemctl disable mavros.service # disable service on boot
+sudo systemctl daemon-reload # reload service
+sudo systemctl start mavros.service # start service once
+sudo systemctl stop mavros.service # stop the active service
+sudo systemctl status mavros.service # echo the output of the service
+```
+
+### Result:
 
 Remember to check that the mocap pose data were transferred to the pixhawk properly:
 

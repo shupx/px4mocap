@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PATH=/usr/bin:/usr/bin
+export PATH=$PATH:/usr/sbin:/sbin
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+exec startxfce4 &

@@ -35,7 +35,7 @@
 
 5. 设置开机自启动：
 
-   把`px4mocap/vncserver-command/vncserver.service`中的用户名cm改成实际的用户名，然后用systemctl的开机自启动管理：
+   把`px4mocap/vncserver-command/vncserver.service`中的用户名cm改成实际的用户名（注意shell命令中vncserver必须要指定用户名后启动），然后用systemctl的开机自启动管理：
    
    ```bash
    cd px4mocap/vncserver-command

@@ -1,11 +1,11 @@
 [Unit]
-Description=vncserver autostart shdaemon
+Description=vncserver autostart daemon
+After=gdm.service
 
 [Service]
-Type=simple  # 定义启动类型。可设置：simple，exec，forking，oneshot，dbus，notify，idle 
-ExecStart=/home/cm/px4mocap/vncserver-command/vncserver.sh # 服务开启时执行脚本 
-Restart=always   # 在什么情况下会自动重启 
-RestartSec=5   # 自动启动间隔时间
+Type=onshot  # 定义启动类型。可设置：simple，exec，forking，oneshot，dbus，notify，idle 
+ExecStart=/bin/sh -c "su cm -c '/usr/bin/vncserver :1 -geometry 1200x800 -localhost no'" # 服务开启时执行脚本 
+RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target

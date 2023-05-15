@@ -80,8 +80,8 @@ rostopic echo /mavros/local_position/pose
 ```
 Note that `rostopic echo` is cpu and RAM consuming. Do not keep `rostopic echo` on resource-limited onboard computer like raspberrypi.
 
-### Attention:
 
+### Attention:
 
 Be sure to properly set `EKF2_AID_MASK` (`EKF2_EV_CTRL` in px4 v1.14.0 and newer version) and `EKF2_HGT_REF` parameters of PX4 on QgroundControl to receive these pose messages.
 

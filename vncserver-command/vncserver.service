@@ -1,0 +1,11 @@
+[Unit]
+Description=vncserver autostart shdaemon
+
+[Service]
+Type=simple  # 定义启动类型。可设置：simple，exec，forking，oneshot，dbus，notify，idle 
+ExecStart=/home/cm/px4mocap/vncserver.sh # 服务开启时执行脚本 
+Restart=always   # 在什么情况下会自动重启 
+RestartSec=5   # 自动启动间隔时间
+
+[Install]
+WantedBy=multi-user.target

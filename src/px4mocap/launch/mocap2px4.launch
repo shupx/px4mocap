@@ -3,6 +3,7 @@
 	<arg name="gcs_url" default="udp://@192.168.31.105" />
 	<arg name="mocap_unit" default="m" /> <!-- m or mm-->
 
+	<group ns="uav1">
 	<include file="$(find mavros)/launch/node.launch">
 		<arg name="fcu_url" value="$(arg fcu_url)" />
 		<arg name="pluginlists_yaml" value="$(find mavros)/launch/px4_pluginlists.yaml" />
@@ -15,13 +16,15 @@
 		<arg name="respawn_mavros" default="false" />
 	</include>
 
-	<include file="$(find vrpn_client_ros)/launch/sample.launch">
-		<arg name="server" value="192.168.31.105" />
-	</include>
-
 	<node pkg="px4mocap" type="px4mocap_node" name="px4mocap_node" output="screen">
 		<remap from="rigidpose_topic" to="/vrpn_client_node/uav1/pose"/>
 		<param name="mocap_unit" value="$(arg mocap_unit)" />
 	</node>
+	</group>
+
+
+	<include file="$(find vrpn_client_ros)/launch/sample.launch">
+		<arg name="server" value="192.168.31.105" />
+	</include>
 
 </launch>

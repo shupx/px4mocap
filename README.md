@@ -80,7 +80,7 @@ Furthur more, you can set `mavros` or `vrpn2mavros` as auto-startup service on b
 
 ```bash
 cd px4mocap/src/px4mocap/launch
-# change `ExecStart` path in **.service first (must use absolute path).
+# change `ExecStart` path in **.service and **.sh first (must use absolute path).
 # service文件中不要出现中文和注释！
 sudo cp roscore.service /etc/systemd/system/roscore.service
 sudo cp mavros.service /etc/systemd/system/mavros.service 

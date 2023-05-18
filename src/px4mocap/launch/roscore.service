@@ -1,0 +1,11 @@
+[Unit]
+Description=roscore autostart shdaemon
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -i -c "source /opt/ros/noetic/setup.bash; roscore"
+Restart=always    
+# RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

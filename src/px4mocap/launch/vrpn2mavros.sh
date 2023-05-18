@@ -8,6 +8,7 @@ while true
 do
 	ping -c 2 192.168.31.105 >/dev/null
 	if [ $? -eq 0 ];then
+		sleep 5 # waiting for roscore to finish launching
 		roslaunch px4mocap vrpn2mavros.launch
 		break
 	else

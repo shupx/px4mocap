@@ -1,11 +1,12 @@
 [Unit]
 Description=vrpn2mavros autostart shdaemon
+After=roscore.service
 
 [Service]
-Type=simple   # 定义启动类型。可设置：simple，exec，forking，oneshot，dbus，notify，idle 
-ExecStart=/home/cm/px4mocap/src/px4mocap/launch/vrpn2mavros.sh # 服务开启时执行脚本 
-Restart=always   # 在什么情况下会自动重启 
-# RestartSec=2   # 自动启动间隔时间
+Type=simple
+ExecStart=/home/cm/px4mocap/src/px4mocap/launch/vrpn2mavros.sh
+Restart=always    
+# RestartSec=2
 
 [Install]
 WantedBy=multi-user.target

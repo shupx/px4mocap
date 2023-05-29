@@ -1,0 +1,12 @@
+[Unit]
+Description=oled display autostart shdaemon
+After=oled.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -i -c "su cm -c 'source /opt/ros/noetic/setup.bash; source /home/cm/px4mocap/devel/setup.bash; rosrun px4mocap stats.py'"
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

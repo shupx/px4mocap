@@ -368,7 +368,7 @@ def oled_page_network():
     cmd = "cat /proc/net/wireless |grep wlan0 |awk '{print $3}'"
     Link_quality = float(subprocess.getoutput(cmd)) / 70  # 70. /70
 
-    cmd = "cat /proc/net/wireless |grep wlan0 |awk '{print $3}'"
+    cmd = "cat /proc/net/wireless |grep wlan0 |awk '{print $4}'"
     Signal_level = float(subprocess.getoutput(cmd)) # -32 dBm
 
     cmd = "iwconfig wlan0 |grep ESSID |awk '{printf $(NF)}'"

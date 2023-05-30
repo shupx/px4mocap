@@ -4,7 +4,7 @@ After=oled.service
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -i -c "su cm -c 'source /opt/ros/noetic/setup.bash; source /home/cm/px4mocap/devel/setup.bash; rosrun px4mocap stats.py'"
+ExecStart=/home/cm/px4mocap/src/px4mocap/launch/oled.sh
 Restart=always
 RestartSec=3
 

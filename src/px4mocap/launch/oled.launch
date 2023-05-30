@@ -1,0 +1,8 @@
+<launch>
+
+	<group ns="uav1">
+	<node pkg="px4mocap" type="stats.py" name="oled" output="screen">
+	</node>
+	</group>
+	
+</launch>

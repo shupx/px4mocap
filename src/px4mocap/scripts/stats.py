@@ -284,7 +284,7 @@ def oled_page_px4():
     draw.text((left, top+4*h),  "Z: {:.2f} m".format(ENUpos[2]),  font=font, fill=255)
     draw.text((left+oled_width/2+2, top+4*h),  "Yaw: {:.1f}°".format(yaw),  font=font, fill=255)
     
-    draw.text((left, top+5*h),  "Bat: {:.2f}V {:.0f}% {:.1f}A".format(bat_volt, bat_perct, bat_cur),  font=font, fill=255)
+    draw.text((left, top+5*h),  "Bat: {:.2f}V {:.0f}% {:.1f}A".format(bat_volt, bat_perct*100, bat_cur),  font=font, fill=255)
 
     # Display image.
     disp.image(image)

@@ -90,7 +90,7 @@ def mavros_pose_cb(data):
 def mavros_battery_cb(data):
     global bat_volt, bat_cur, bat_perct
     bat_volt = data.voltage
-    bat_cur = data.current
+    bat_cur = -data.current
     bat_perct = data.percentage
     rospy.sleep(0.2)
 

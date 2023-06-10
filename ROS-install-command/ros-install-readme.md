@@ -31,7 +31,7 @@ sudo apt-get update --fix-missing
 # 如果安装melodic版本，下面noetic对应改成melodic
 sudo apt install ros-noetic-desktop # 桌面端建议安装这个更全的版本
 sudo apt install ros-noetic-ros-base # 机载端安装这个最简单的版本
-echo "/opt/ros/noetic/setup.bash" >> ~/.bashrc # 添加环境路径
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc # 添加环境路径
 ```
 
 

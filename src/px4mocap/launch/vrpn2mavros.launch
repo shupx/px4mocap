@@ -1,15 +1,17 @@
 <launch>
 	<arg name="mocap_unit" default="m" /> <!-- m or mm-->
+	<arg name="marker_name" default="uav1" />
+	<arg name="vrpn_server" default="192.168.31.105" /> 
 	
-	<group ns="uav1">
+	<!--group ns="uav1"-->
 	<node pkg="px4mocap" type="px4mocap_node" name="px4mocap_node" output="screen">
-		<remap from="rigidpose_topic" to="/vrpn_client_node/uav1/pose"/>
+		<remap from="rigidpose_topic" to="/vrpn_client_node/$(arg marker_name)/pose"/>
 		<param name="mocap_unit" value="$(arg mocap_unit)" />
 	</node>
-	</group>
+	<!--/group-->
 
 	<include file="$(find vrpn_client_ros)/launch/sample.launch">
-		<arg name="server" value="192.168.31.105" />
+		<arg name="server" value="$(arg vrpn_server)" />
 	</include>
 
 
